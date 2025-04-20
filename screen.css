@@ -1,4 +1,246 @@
-/* Add screen styles below */
-a.active {
-    font-weight: bold;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f8f8f8;
 }
+
+.app,
+.homeApp {
+  max-width: 375px;
+  margin: auto;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* HOME PAGE */
+.hero-image {
+  width: 100%;
+}
+
+.speech-bubble {
+  background: rgba(255, 255, 200, 0.8);
+  padding: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -1rem;
+}
+
+.consult-button {
+  background: #7cc14c;
+  color: white;
+  padding: 0.75rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.icon-item span {
+  font-size: 0.9rem;
+  color: #3e7e20;
+  font-weight: 600;
+}
+
+/* FOOTER  */
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+footer img {
+  width: 24px;
+  height: 24px;
+}
+
+/* WORKOUT PAGE */
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #7cc14c;
+  color: white;
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  padding: 0.4rem 0.6rem;
+  margin: 0 1rem 1rem;
+  gap: 0.5rem;
+}
+
+.search-container .search-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  flex-grow: 1;
+}
+
+.tile {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.tile img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+.tile .label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(124, 193, 76, 0.9);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.search-wrapper {
+  background-color: #f7f7f7; 
+  padding: 0.75rem 1rem 0.5rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  gap: 0.5rem;
+  border: 0.5px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-container .search-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+.circle-section {
+  background-color: #f4fadc;
+  padding: 1.5rem 1rem;
+  margin-top: -5px; 
+ 
+}
+
+
+
+.consult-button {
+  position: absolute;
+  top: 330px;        
+  left: 700px;       
+  background: #7cc14c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.speech-bubble {
+  position: absolute;
+  top: 170px;       
+  left: 778px;      
+  background: rgba(255, 217, 102, 0.65);
+  padding: 0.6rem 1rem;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #2b4c2f;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 180px;
+  text-align: left;
+  z-index: 3;
+}
+
+.workout-btn {
+  cursor: pointer;
+}
+.workout-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
