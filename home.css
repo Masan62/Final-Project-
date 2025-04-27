@@ -1,0 +1,120 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  /* Home App */
+  .homeApp {
+    max-width: 375px;
+    margin: auto;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Top Section */
+  .top-section {
+    position: relative;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Speech Bubble */
+  .speech-bubble {
+    position: absolute;
+    top: 40%;
+    right: 13%;
+    background: rgba(255, 217, 102, 0.65);
+    padding: 0.75rem 1rem;
+    border-radius: 0px 12px 12px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #2b4c2f;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 180px;
+  }
+  
+  /* Consult Button */
+  .consult-button {
+    position: absolute;
+    top: 95%;
+    left: 25%;
+    background: #7cc14c;
+    color: white;
+    padding: 0.75rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Circle Section */
+  .circle-section {
+    background-color: #f4fadc;
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Icon Grid */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  
+  /* Icon Item */
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .icon-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon-item span {
+    font-size: 0.9rem;
+    color: #3e7e20;
+    font-weight: 600;
+  }
+  
+  /* Make workout button clickable look normal */
+  a.workout-btn {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Footer */
+  footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    position: sticky;
+    bottom: 0;
+  }
+  
+  footer img {
+    width: 24px;
+    height: 24px;
+  }
+  

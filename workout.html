@@ -1,46 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="workoutPage()">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workout Page</title>
-  <link rel="stylesheet" href="screen.css" />
+  <link rel="stylesheet" href="workout.css" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
   <div class="app">
+
+    <!-- Header -->
     <header>
       <div class="headerRow">
         <button class="back-arrow" onclick="window.location.href='index.html'">←</button>
         <h1>Workout</h1>
       </div>
-    
+
+      <!-- Search Bar -->
       <div class="search-wrapper">
         <div class="search-container">
           <img src="Search.png" alt="Search Icon" class="search-icon" />
-          <input type="text" placeholder="Search for workouts..." />
+          <input type="text" placeholder="Search for workouts..." x-model="search" />
         </div>
       </div>
     </header>
-    
+
+    <!-- Main Grid -->
     <main class="grid">
-      <div class="tile"><img src="Upperbody.png" alt="Upper Body" /><div class="label">Upper Body</div></div>
-      <div class="tile"><img src="Lowerbody.png" alt="Lower Body" /><div class="label">Lower Body</div></div>
-      <div class="tile"><img src="Core.png" alt="Core" /><div class="label">Core</div></div>
-      <div class="tile"><img src="Cardio.png" alt="Cardio" /><div class="label">Cardio</div></div>
-      <div class="tile"><img src="Weight.png" alt="Weight" /><div class="label">Weight</div></div>
-      <div class="tile"><img src="Yoga.png" alt="Yoga" /><div class="label">Yoga</div></div>
-      <div class="tile"><img src="Flexibility.png" alt="Flexibility" /><div class="label">Flexibility</div></div>
-      <div class="tile"><img src="Dance.png" alt="Dance" /><div class="label">Dance</div></div>
-      <div class="tile"><img src="Warmup.png" alt="Warmup" /><div class="label">Warm Up</div></div>
-      <div class="tile"><img src="Cooldown.png" alt="Cool Down" /><div class="label">Cool Down</div></div>
+      <template x-for="workout in filteredWorkouts()" :key="workout.name">
+        <div class="tile">
+          <div class="image-container">
+            <img :src="workout.image" :alt="workout.name" />
+          </div>
+          <div class="label" x-text="workout.name"></div>
+        </div>
+      </template>
+
+      <div x-show="filteredWorkouts().length === 0" class="no-results" x-cloak>
+        No workouts found.
+      </div>
     </main>
 
+    <!-- Footer -->
     <footer>
       <img src="Heart.png" alt="Heart" />
       <img src="Calendar.png" alt="Calendar" />
       <img src="Kit.png" alt="Kit" />
       <img src="User.png" alt="User" />
     </footer>
+
   </div>
+
+  <script>
+    function workoutPage() {
+      return {
+        search: '',
+        workouts: [
+          { name: 'Upper Body', image: 'Upperbody.png' },
+          { name: 'Lower Body', image: 'Lowerbody.png' },
+          { name: 'Core', image: 'Core.png' },
+          { name: 'Cardio', image: 'Cardio.png' },
+          { name: 'Weight', image: 'Weight.png' },
+          { name: 'Yoga', image: 'Yoga.png' },
+          { name: 'Flexibility', image: 'Flexibility.png' },
+          { name: 'Dance', image: 'Dance.png' },
+          { name: 'Warm Up', image: 'Warmup.png' },
+          { name: 'Cool Down', image: 'Cooldown.png' }
+        ],
+        filteredWorkouts() {
+          if (this.search.trim() === '') {
+            return this.workouts;
+          }
+          return this.workouts.filter(w =>
+            w.name.toLowerCase().startsWith(this.search.toLowerCase())
+          );
+        }
+      }
+    }
+  </script>
+
 </body>
 </html>

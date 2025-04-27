@@ -4,50 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Health App - Home</title>
-  <link rel="stylesheet" href="screen.css" />
-  <script defer src="index.js"></script>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <div class="homeApp">
+    
+    <!-- Top Section: Doctor Image + Speech Bubble + Button -->
     <div class="top-section">
-      <img src="Doc.png" alt="Doctor image created with AI " class="hero-image" />
-    
+      <img src="Doc.png" alt="Doctor image created with AI" class="hero-image" />
+      
+      <!-- Speech bubble -->
       <div class="speech-bubble">
-        <p>How can we<br />help you today?</p>
+        <p>How can we<br>help you today?</p>
       </div>
-    
+
+      <!-- Button -->
       <button class="consult-button">Book Free Consult</button>
     </div>
-    
 
-    
+    <!-- Circle Section: Appointment, Diet Plans, Workout, Calorie Counter -->
     <div class="circle-section">
       <div class="icon-grid">
+        
         <div class="icon-item">
           <img src="Appointment.png" alt="Appointment" />
           <span>Appointment</span>
         </div>
+
         <div class="icon-item">
           <img src="Dietplan.png" alt="Diet Plans" />
           <span>Diet Plans</span>
         </div>
-        <div class="icon-item workout-btn">
+
+        <!-- Workout button clickable -->
+        <a href="workout.html" class="icon-item workout-btn">
           <img src="Workout.png" alt="Workout" />
           <span>Workout</span>
-        </div>
+        </a>
+
         <div class="icon-item">
           <img src="Calorie.png" alt="Calorie Counter" />
           <span>Calorie Counter</span>
         </div>
+
       </div>
     </div>
 
+    <!-- Footer -->
     <footer>
       <img src="Heart.png" alt="Heart" />
       <img src="Calendar.png" alt="Calendar" />
       <img src="Kit.png" alt="Kit" />
       <img src="User.png" alt="User" />
     </footer>
+
   </div>
 </body>
 </html>
