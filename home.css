@@ -61,7 +61,7 @@ body {
   /* Circle Section */
   .circle-section {
     background-color: #f4fadc;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem 4rem; /* More bottom space to match Workout */
   }
   
   /* Icon Grid */
@@ -106,15 +106,22 @@ body {
   footer {
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem;
+    align-items: center;
+    padding: 0.25rem 0;
+    height: 60px;
     border-top: 1px solid #ddd;
     background: #fff;
     position: sticky;
     bottom: 0;
+    z-index: 10;
   }
   
   footer img {
     width: 24px;
     height: 24px;
   }
-  
+  .icon-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+   
